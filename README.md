@@ -1,0 +1,2 @@
+# MineFieldKata
+Mine Field Kata
