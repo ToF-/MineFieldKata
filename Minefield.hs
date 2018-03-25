@@ -1,4 +1,5 @@
 module Minefield
 where
 
-label = id
+label ["*"] = ["*"]
+label ["."] = ["0"]
