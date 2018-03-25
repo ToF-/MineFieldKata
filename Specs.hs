@@ -17,3 +17,6 @@ main = hspec $ do
 
         it "given a 2x1 mine field at the beginning, labels it" $ do
             label ["*."] `shouldBe` ["*1"]
+
+        it "given a 1x2 mine field, labels it" $ do
+            label ["*","."] `shouldBe` ["*","1"]
