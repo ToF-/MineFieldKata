@@ -1,5 +1,6 @@
 module Minefield
 where
+import Data.Char (digitToInt, intToDigit)
 
 label [s] = [zipWith merge (labelLeft s) (labelRight s)]
     where 
@@ -9,7 +10,6 @@ label [s] = [zipWith merge (labelLeft s) (labelRight s)]
     labelLeft s  = zipWith danger s ((tail s)++".")
     labelRight s = reverse (labelLeft (reverse s)) 
     merge '*'  _  = '*'
-    merge '0' '0' = '0'
-    merge '0' '1' = '1'
-    merge '1' '0' = '1'
+    merge  _  '*' = '*'
+    merge c d = intToDigit (digitToInt c + digitToInt d)
     
